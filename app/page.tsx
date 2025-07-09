@@ -14,7 +14,7 @@ export default function Home() {
         let fpPromise;
         function loadFP() {
           fpPromise = import('https://fpjscdn.net/v3/A5dUKxfbZOeQQ4vEU4AA')
-            .then(FingerprintJS => FingerprintJS.load());
+            .then(FingerprintJS => FingerprintJS.load({cacheLocation: 'noCache'}));
         }
         function getVisitorId() {
           fpPromise
