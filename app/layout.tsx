@@ -28,9 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <FpjsProvider loadOptions={{ apiKey: "A5dUKxfbZOeQQ4vEU4AA" }}>
-          {children}
-        </FpjsProvider>
+        {children}
       </body>
     </html>
   );
