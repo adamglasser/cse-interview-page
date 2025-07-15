@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FingerprintJS Example</title>
+</head>
+<body>
+  <h2>Script code:</h2>
+  <pre>&lt;script&gt;
+  
+  const fpPromise = import('https://metrics.fpmetrics.org/web/v3/iKyJyaIQhxcFBShRsNWF')
+    .then(FingerprintJS =&gt; FingerprintJS.load({
+      endpoint: [
+        "https://metrics.fpmetrics.org",
+        FingerprintJS.defaultEndpoint
+      ],
+      region: "eu"
+    }))
+
+  
+  fpPromise
+    .then(fp =&gt; fp.get())
+    .then(result =&gt; {
+      const visitorId = result.visitorId
+    })
+&lt;/script&gt;
+  </pre>
+
+  <script>
+    const fpPromise = import('https://metrics.fpmetrics.org/web/v3/iKyJyaIQhxcFBShRsNWF')
+      .then(FingerprintJS => FingerprintJS.load({
+        endpoint: [
+          "https://metrics.fpmetrics.org",
+          FingerprintJS.defaultEndpoint
+        ],
+        region: "eu"
+      }))
+
+    fpPromise
+      .then(fp => fp.get())
+      .then(result => {
+        const visitorId = result.visitorId
+      })
+  </script>
+</body>
+</html>
