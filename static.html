@@ -5,42 +5,39 @@
   <title>FingerprintJS Example</title>
 </head>
 <body>
-  <h2>Script code:</h2>
-  <pre>&lt;script&gt;
+  <h2>What is this code doing?</h2>
+  <pre>
   
-  const fpPromise = import('https://metrics.fpmetrics.org/web/v3/iKyJyaIQhxcFBShRsNWF')
-    .then(FingerprintJS =&gt; FingerprintJS.load({
+  const fpPromise = import('https://fpmetrics.org/hXL4z6EGrB1JMteO/UwejPGyBm332P97U?apiKey=iKyJyaIQhxcFBShRsNWF')
+    .then(FingerprintJS => FingerprintJS.load({
       endpoint: [
-        "https://metrics.fpmetrics.org",
+        "https://fpmetrics.org/hXL4z6EGrB1JMteO/ZpJ2xKorUYvlt3pk?region=eu",
+        FingerprintJS.defaultEndpoint
+      ]
+    }))
+
+  fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+      const visitorId = result.visitorId
+    })
+  </pre>
+
+  <script>
+    const fpPromise = import('https://fpmetrics.org/hXL4z6EGrB1JMteO/UwejPGyBm332P97U?apiKey=iKyJyaIQhxcFBShRsNWF')
+    .then(FingerprintJS => FingerprintJS.load({
+      endpoint: [
+        "https://fpmetrics.org/hXL4z6EGrB1JMteO/ZpJ2xKorUYvlt3pk?region=eu",
         FingerprintJS.defaultEndpoint
       ],
       region: "eu"
     }))
 
-  
   fpPromise
-    .then(fp =&gt; fp.get())
-    .then(result =&gt; {
+    .then(fp => fp.get())
+    .then(result => {
       const visitorId = result.visitorId
     })
-&lt;/script&gt;
-  </pre>
-
-  <script>
-    const fpPromise = import('https://metrics.fpmetrics.org/web/v3/iKyJyaIQhxcFBShRsNWF')
-      .then(FingerprintJS => FingerprintJS.load({
-        endpoint: [
-          "https://metrics.fpmetrics.org",
-          FingerprintJS.defaultEndpoint
-        ],
-        region: "eu"
-      }))
-
-    fpPromise
-      .then(fp => fp.get())
-      .then(result => {
-        const visitorId = result.visitorId
-      })
   </script>
 </body>
 </html>
